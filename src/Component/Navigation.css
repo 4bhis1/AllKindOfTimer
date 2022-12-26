@@ -1,0 +1,28 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+  color: white;
+  margin-bottom: 2%;
+}
+
+.navigation_icons {
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  border-color: white;
+  fill: white !important;
+}
+
+.navigation_icons:hover {
+  border-bottom: 4px solid white;
+}
+
+.active {
+  border-bottom: 4px solid white;
+}
+
+a :active {
+  text-decoration: none;
+}
