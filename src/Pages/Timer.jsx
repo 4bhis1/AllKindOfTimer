@@ -123,22 +123,20 @@ let Timer = () => {
           name="ms"
           placeholder="00"
           maxLength="2"
-      
           value={timer.ms}
           style={styles.timer}
         />
       </form>
 
- 
       <div className="buttons">
         <Button
           variant="outlined"
           size="large"
-          startIcon={playPause ? <PlayArrowIcon /> : <PauseOutlinedIcon />}
+          startIcon={!playPause ? <PlayArrowIcon /> : <PauseOutlinedIcon />}
           style={{ marginRight: "20px" }}
           onClick={clicked}
         >
-          {playPause ? "Play" : "Pause"}
+          {!playPause ? "Play" : "Pause"}
         </Button>
         <Button
           variant="outlined"
@@ -187,8 +185,17 @@ let Timer = () => {
       >
         {flag &&
           flag.map((x, index) => (
-            <div style={{ padding: 5, fontSize: 22, display : "flex" }} key={index}>
-              <div style={{ marginRight: 10, alignItems: "center", display:"flex" }}>
+            <div
+              style={{ padding: 5, fontSize: 22, display: "flex" }}
+              key={index}
+            >
+              <div
+                style={{
+                  marginRight: 10,
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
                 <EmojiFlagsOutlinedIcon style={{ height: 15, width: 15 }} />
               </div>
               {x}

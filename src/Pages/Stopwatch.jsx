@@ -7,7 +7,7 @@ import EmojiFlagsOutlinedIcon from "@mui/icons-material/EmojiFlagsOutlined";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const MoreNumber = (number) =>
-  number < 10 && number > -10 ? `0${number}` : number;
+  number ? (number < 10 && number > -10 ? `0${number}` : number) : "00";
 
 let Stopwatch = () => {
   let [timer, updateTimer] = useState({
@@ -134,11 +134,11 @@ let Stopwatch = () => {
         <Button
           variant="outlined"
           size="large"
-          startIcon={playPause ? <PlayArrowIcon /> : <PauseOutlinedIcon />}
+          startIcon={!playPause ? <PlayArrowIcon /> : <PauseOutlinedIcon />}
           style={{ marginRight: "20px" }}
           onClick={clicked}
         >
-          {playPause ? "Play" : "Pause"}
+          {!playPause ? "Play" : "Pause"}
         </Button>
         <Button
           variant="outlined"
